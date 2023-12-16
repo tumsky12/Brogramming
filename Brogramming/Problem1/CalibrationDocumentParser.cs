@@ -26,6 +26,8 @@ public class CalibrationDocumentParser
 
     public int GetTwoDigitNumber(string line)
     {
+        var originalLine = line;
+        line = InsertIntegerAfterString(line);
         string? firstDigit = null;
         string lastDigit = null;
 
@@ -50,6 +52,22 @@ public class CalibrationDocumentParser
         var twoDigitNumber = firstDigit + lastDigit;
 
         return int.Parse(twoDigitNumber);
+    }
+
+    public string InsertIntegerAfterString(string line)
+    {
+        //eightwo45threeone
+        foreach (KeyValuePair<string, int> number in NumberMapping)
+        {
+            var firstIndexOfNumber = line.IndexOf(number.Key);
+            if (firstIndexOfNumber != -1)
+                line = line.Insert(firstIndexOfNumber + 1, number.Value.ToString());
+
+            var lastIndexOfNumber = line.LastIndexOf(number.Key);
+            if (lastIndexOfNumber >= 0 && firstIndexOfNumber != lastIndexOfNumber)
+                line = line.Insert(lastIndexOfNumber + 1, number.Value.ToString());
+        }
+        return line;
     }
 
     public int AddListOfDigitsTogether(List<int> digits)

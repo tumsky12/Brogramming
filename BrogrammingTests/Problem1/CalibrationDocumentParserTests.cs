@@ -18,6 +18,7 @@ public class Tests
     [TestCase("4nineeightseven2", 42)]
     [TestCase("zoneight234", 14)]
     [TestCase("7pqrstsixteen", 76)]
+    [TestCase("ddgjgcrssevensix37twooneightgt", 78)]
     public void GetTwoDigitNumber_ReturnsCorrectTwoDigitNumber(string testLine, int expectedResult)
     {
         // Arrange
@@ -29,12 +30,12 @@ public class Tests
         // Assert
         Assert.That(expectedResult, Is.EqualTo(actualResult));
     }
-    
+
     [Test]
     public void AddListOfDigitsTogether_CorrectlyAddsAllDigitsTogether()
     {
         // Arrange
-        var testDigits = new List<int>{12, 38, 15, 77};
+        var testDigits = new List<int> { 12, 38, 15, 77 };
         var expectedResult = 142;
 
         // Act
@@ -58,6 +59,23 @@ treb7uchet";
         // Act
         var parser = new CalibrationDocumentParser();
         var actualResult = parser.ParseDocument(document);
+
+        // Assert
+        Assert.That(expectedResult, Is.EqualTo(actualResult));
+    }
+
+    [TestCase("one", "o1ne")]
+    [TestCase("asonedf", "aso1nedf")]
+    [TestCase("asonedf2", "aso1nedf2")]
+    [TestCase("34asonedf2", "34aso1nedf2")]
+
+    public void InsertIntegerAfterString(string testLine, string expectedResult)
+    {
+        // Arrange
+
+        // Act
+        var parser = new CalibrationDocumentParser();
+        var actualResult = parser.InsertIntegerAfterString(testLine);
 
         // Assert
         Assert.That(expectedResult, Is.EqualTo(actualResult));
