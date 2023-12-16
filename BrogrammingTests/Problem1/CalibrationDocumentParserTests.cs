@@ -2,7 +2,7 @@ using Brogramming.Problem1;
 
 namespace BrogrammingTests.Problem1;
 
-public class Tests
+public class CalibrationDocumentParserTests
 {
     //[SetUp]
     //public void Setup()
@@ -24,7 +24,7 @@ public class Tests
         // Arrange
 
         // Act
-        var parser = new CalibrationDocumentParser();
+        var parser = new GameEvaluator();
         var actualResult = parser.GetTwoDigitNumber(testLine);
 
         // Assert
@@ -39,7 +39,7 @@ public class Tests
         var expectedResult = 142;
 
         // Act
-        var parser = new CalibrationDocumentParser();
+        var parser = new GameEvaluator();
         var actualResult = parser.AddListOfDigitsTogether(testDigits);
 
         // Assert
@@ -57,7 +57,7 @@ treb7uchet";
         var expectedResult = 142;
 
         // Act
-        var parser = new CalibrationDocumentParser();
+        var parser = new GameEvaluator();
         var actualResult = parser.ParseDocument(document);
 
         // Assert
@@ -74,7 +74,7 @@ treb7uchet";
         // Arrange
 
         // Act
-        var parser = new CalibrationDocumentParser();
+        var parser = new GameEvaluator();
         var actualResult = parser.InsertIntegerAfterString(testLine);
 
         // Assert

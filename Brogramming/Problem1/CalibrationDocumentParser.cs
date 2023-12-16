@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Brogramming.Problem1;
 
-public class CalibrationDocumentParser
+public class GameEvaluator
 {
 
     public Dictionary<string, int> NumberMapping { get; set; } = new Dictionary<string, int>()

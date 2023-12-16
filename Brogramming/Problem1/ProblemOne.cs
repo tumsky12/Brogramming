@@ -1,11 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-using System.Xml.Schema;
-using Brogramming.Problem1;
+namespace Brogramming.Problem1;
 
-Console.WriteLine("We Brogramming!");
+public static class ProblemOne
+{
+    public static void RunProblem()
+    {
 
-var document = @"fivepqxlpninevh2xxsnsgg63pbvdnqptmg
+        var document = @"fivepqxlpninevh2xxsnsgg63pbvdnqptmg
 eight8zlctbmsixhrvbpjb84nnmlcqkzrsix
 hkxqfrqmsixfplbkpkdfzzszjxmdjtdkjlprrvr3gghlrqckqtbng
 zkjkctxvssix1dqb22five
@@ -1006,8 +1012,14 @@ ctwoneone7dtztzrk3ninefivexvj
 sixfourgkdlxtqmbzkgmpmcsevenhzrt4
 eight6twojtzlvlhgjncvx";
 
-var parser = new CalibrationDocumentParser();
-var result = parser.ParseDocument(document);
+        var parser = new GameEvaluator();
+        var result = parser.ParseDocument(document);
 
 
-Console.WriteLine(result);
+        Console.WriteLine("Problem 1 Answer:" + result);
+
+    }
+
+
+}
+
