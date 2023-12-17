@@ -24,7 +24,7 @@ public class CalibrationDocumentParserTests
         // Arrange
 
         // Act
-        var parser = new GameEvaluator();
+        var parser = new CalibrationDocumentParser();
         var actualResult = parser.GetTwoDigitNumber(testLine);
 
         // Assert
@@ -39,7 +39,7 @@ public class CalibrationDocumentParserTests
         var expectedResult = 142;
 
         // Act
-        var parser = new GameEvaluator();
+        var parser = new CalibrationDocumentParser();
         var actualResult = parser.AddListOfDigitsTogether(testDigits);
 
         // Assert
@@ -57,7 +57,7 @@ treb7uchet";
         var expectedResult = 142;
 
         // Act
-        var parser = new GameEvaluator();
+        var parser = new CalibrationDocumentParser();
         var actualResult = parser.ParseDocument(document);
 
         // Assert
@@ -74,7 +74,7 @@ treb7uchet";
         // Arrange
 
         // Act
-        var parser = new GameEvaluator();
+        var parser = new CalibrationDocumentParser();
         var actualResult = parser.InsertIntegerAfterString(testLine);
 
         // Assert

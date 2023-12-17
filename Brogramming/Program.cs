@@ -1,7 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Xml.Schema;
-using Brogramming.Problem1;
+﻿using Brogramming.Problem1;
+using Brogramming.Problem2;
 
 Console.WriteLine("We Brogramming!");
 

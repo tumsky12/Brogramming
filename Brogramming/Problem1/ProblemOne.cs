@@ -1012,7 +1012,7 @@ ctwoneone7dtztzrk3ninefivexvj
 sixfourgkdlxtqmbzkgmpmcsevenhzrt4
 eight6twojtzlvlhgjncvx";
 
-        var parser = new GameEvaluator();
+        var parser = new CalibrationDocumentParser();
         var result = parser.ParseDocument(document);
 
 
