@@ -8,9 +8,8 @@ namespace Brogramming.Problem2;
 
 public static class ElfGameDocumentParser
 {
-    public static ElfGame ParseGame(string document)
+    public static ElfGame ParseGame(string line)
     {
-        var line = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green";
         var splitLine = line.Split(":"); // ["Game 1", "3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green"]
         var gameId = int.Parse(splitLine[0].Substring(5)); // 1
 

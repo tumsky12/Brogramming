@@ -17,25 +17,39 @@ public class ElfGame
         Hands = hands;
     }
 
-    public int GetMaxRed()
+    public (int maxRed, int maxGreen, int maxBlue) GetMaxColours()
     {
-        return 3;
+        var maxRed = 0;
+        var maxGreen = 0;
+        var maxBlue = 0;
+        foreach (var hand in Hands)
+        {
+            var numberRed = hand.NumberRed;
+            if (numberRed > maxRed)
+            {
+                maxRed = numberRed;
+            }
+            var numberGreen = hand.NumberGreen;
+            if (numberGreen > maxGreen)
+            {
+                maxGreen = numberGreen;
+            }
+            var numberBlue = hand.NumberBlue;
+            if (numberBlue > maxBlue)
+            {
+                maxBlue = numberBlue;
+            }
+        }
+        return (maxRed, maxGreen, maxBlue);
     }
 
-
-}
-
-public class ElfHand
-{
-    public int NumberRed { get; set;}
-    public int NumberGreen { get; set;}
-    public int NumberBlue { get; set;}
-
-    public ElfHand(int numberRed, int numberGreen, int numberBlue)
+    public bool IsGamePossible(int red, int green, int blue)
     {
-        NumberRed = numberRed;
-        NumberGreen = numberGreen;
-        NumberBlue = numberBlue;
+        var maxColours = GetMaxColours();
+        if (maxColours.maxRed > red) return false;
+        if (maxColours.maxGreen > green) return false;
+        if (maxColours.maxRed > blue) return false;
+        return true;
     }
 
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Brogramming.Problem1;
 
-public class GameEvaluator
+public class CalibrationDocumentParser
 {
 
     public Dictionary<string, int> NumberMapping { get; set; } = new Dictionary<string, int>()
@@ -29,7 +29,7 @@ public class GameEvaluator
         var originalLine = line;
         line = InsertIntegerAfterString(line);
         string? firstDigit = null;
-        string lastDigit = null;
+        string lastDigit = null!;
 
         var characterArray = line.ToCharArray();
         // ["1", "a", "b", "c" , "2"]
