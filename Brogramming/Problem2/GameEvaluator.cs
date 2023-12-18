@@ -8,12 +8,18 @@ using System.Threading.Tasks;
 namespace Brogramming.Problem2;
 
 public static class GameEvaluator
-{
+{//12 red -- 13 green -- 14 blue
     public static int GetSumOfPossibleGameIds(List<ElfGame> ListOfGames, int numberRed, int numberGreen, int numberBlue)
     {
         var successfulGamesList = new List<int>();
         foreach (ElfGame elfGame in ListOfGames)
         {
+            var maxColours = elfGame.GetMaxColours();
+            var maxRed = maxColours.maxRed;
+            var maxGreen = maxColours.maxGreen;
+            var maxBlue = maxColours.maxBlue;
+
+            var isPossible = elfGame.IsGamePossible(numberRed, numberGreen, numberBlue);
             if (elfGame.IsGamePossible(numberRed, numberGreen, numberBlue))
             {
                 successfulGamesList.Add(elfGame.Id);

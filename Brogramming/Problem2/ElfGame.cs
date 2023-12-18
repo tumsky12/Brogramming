@@ -48,7 +48,7 @@ public class ElfGame
         var maxColours = GetMaxColours();
         if (maxColours.maxRed > red) return false;
         if (maxColours.maxGreen > green) return false;
-        if (maxColours.maxRed > blue) return false;
+        if (maxColours.maxBlue > blue) return false;
         return true;
     }
 
