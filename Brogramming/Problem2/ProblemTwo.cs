@@ -1,11 +1,4 @@
-﻿using Brogramming.Problem2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Brogramming.Problem2;
+﻿namespace Brogramming.Problem2;
 
 public static class ProblemTwo
 {
@@ -16,11 +9,10 @@ public static class ProblemTwo
         //var result = evaluator.Evaluate(gamesString, numberRed, numberGreen, numberBlue);
 
         var elfGames = ElfGameDocumentParser.ParseGames(gamesString);
-        var result = GameEvaluator.GetSumOfPossibleGameIds(elfGames, 12, 13, 14);
-        Console.WriteLine("Problem 2 Answer:" + result);
+        var partOneResult = GameEvaluator.GetSumOfPossibleGameIds(elfGames, 12, 13, 14);
+        Console.WriteLine("Problem 2 Part 1 Result:" + partOneResult);
 
+        var partTwoResult = GameEvaluator.SumOfPowersOfMinimumHands(elfGames);
+        Console.WriteLine("Problem 2 Part 2 Result:" + partTwoResult);
     }
-
-
 }
-
