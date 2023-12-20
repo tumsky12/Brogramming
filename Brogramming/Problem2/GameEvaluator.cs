@@ -20,9 +20,9 @@ public static class GameEvaluator
         var total = 0;
         foreach (ElfGame elfGame in ListOfGames)
         {
-            var minColours = elfGame.GetMinColours();
+            var minColours = elfGame.GetMaxColours();
 
-            var power = minColours.minRed * minColours.minGreen * minColours.minBlue;
+            var power = minColours.maxRed * minColours.maxGreen * minColours.maxBlue;
             total += power;            
         }
         return total;
