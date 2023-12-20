@@ -1,7 +1,7 @@
 using Brogramming.Problem1;
 using Brogramming.Problem2;
 
-namespace BrogrammingTests.Problem1;
+namespace BrogrammingTests.Problem2;
 
 public class ElfGameTests
 {
